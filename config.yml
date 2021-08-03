@@ -1,0 +1,6 @@
+settings:
+    max$requests: 30
+    ratelimits$reset: 1
+    port: 8082
+    title$prefix: 'v.Xmon.eu.org ☕ '
+    url: https://v.Xmon.eu.org/

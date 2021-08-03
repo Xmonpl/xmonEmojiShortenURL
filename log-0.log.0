@@ -1,0 +1,252 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2021-08-03T15:11:28.484878600Z</date>
+  <millis>1628003488484</millis>
+  <nanos>878600</nanos>
+  <sequence>0</sequence>
+  <logger>eu.org.xmon.emojishortenurl.App</logger>
+  <level>INFO</level>
+  <class>eu.org.xmon.emojishortenurl.App</class>
+  <method>startUp</method>
+  <thread>1</thread>
+  <message>Initialization config file..</message>
+</record>
+</log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2021-08-03T15:12:17.496413700Z</date>
+  <millis>1628003537496</millis>
+  <nanos>413700</nanos>
+  <sequence>0</sequence>
+  <logger>eu.org.xmon.emojishortenurl.App</logger>
+  <level>INFO</level>
+  <class>eu.org.xmon.emojishortenurl.App</class>
+  <method>startUp</method>
+  <thread>1</thread>
+  <message>Initialization config file..</message>
+</record>
+</log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2021-08-03T15:13:19.142903400Z</date>
+  <millis>1628003599142</millis>
+  <nanos>903400</nanos>
+  <sequence>0</sequence>
+  <logger>eu.org.xmon.emojishortenurl.App</logger>
+  <level>INFO</level>
+  <class>eu.org.xmon.emojishortenurl.App</class>
+  <method>startUp</method>
+  <thread>1</thread>
+  <message>Initialization config file..</message>
+</record>
+<record>
+  <date>2021-08-03T15:13:19.311806700Z</date>
+  <millis>1628003599311</millis>
+  <nanos>806700</nanos>
+  <sequence>1</sequence>
+  <logger>eu.org.xmon.emojishortenurl.App</logger>
+  <level>INFO</level>
+  <class>eu.org.xmon.emojishortenurl.App</class>
+  <method>startUp</method>
+  <thread>1</thread>
+  <message>Initialization ratelimiter..</message>
+</record>
+<record>
+  <date>2021-08-03T15:13:19.323799800Z</date>
+  <millis>1628003599323</millis>
+  <nanos>799800</nanos>
+  <sequence>2</sequence>
+  <logger>eu.org.xmon.emojishortenurl.App</logger>
+  <level>INFO</level>
+  <class>eu.org.xmon.emojishortenurl.App</class>
+  <method>startUp</method>
+  <thread>1</thread>
+  <message>Running web server on http://localhost:8082</message>
+</record>
+</log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2021-08-03T15:46:32.199338200Z</date>
+  <millis>1628005592199</millis>
+  <nanos>338200</nanos>
+  <sequence>0</sequence>
+  <logger>eu.org.xmon.emojishortenurl.App</logger>
+  <level>INFO</level>
+  <class>eu.org.xmon.emojishortenurl.App</class>
+  <method>startUp</method>
+  <thread>1</thread>
+  <message>Initialization config file..</message>
+</record>
+<record>
+  <date>2021-08-03T15:46:32.368242300Z</date>
+  <millis>1628005592368</millis>
+  <nanos>242300</nanos>
+  <sequence>1</sequence>
+  <logger>eu.org.xmon.emojishortenurl.App</logger>
+  <level>INFO</level>
+  <class>eu.org.xmon.emojishortenurl.App</class>
+  <method>startUp</method>
+  <thread>1</thread>
+  <message>Initialization ratelimiter..</message>
+</record>
+<record>
+  <date>2021-08-03T15:46:32.378235200Z</date>
+  <millis>1628005592378</millis>
+  <nanos>235200</nanos>
+  <sequence>2</sequence>
+  <logger>eu.org.xmon.emojishortenurl.App</logger>
+  <level>INFO</level>
+  <class>eu.org.xmon.emojishortenurl.App</class>
+  <method>startUp</method>
+  <thread>1</thread>
+  <message>Running web server on http://localhost:8082</message>
+</record>
+<record>
+  <date>2021-08-03T15:46:32.394225800Z</date>
+  <millis>1628005592394</millis>
+  <nanos>225800</nanos>
+  <sequence>3</sequence>
+  <logger>eu.org.xmon.emojishortenurl.App</logger>
+  <level>INFO</level>
+  <class>eu.org.xmon.emojishortenurl.App</class>
+  <method>startUp</method>
+  <thread>1</thread>
+  <message>Initialization all routes..</message>
+</record>
+</log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2021-08-03T16:06:12.319359400Z</date>
+  <millis>1628006772319</millis>
+  <nanos>359400</nanos>
+  <sequence>0</sequence>
+  <logger>eu.org.xmon.emojishortenurl.App</logger>
+  <level>INFO</level>
+  <class>eu.org.xmon.emojishortenurl.manager.ShortManager</class>
+  <method>loadUsers</method>
+  <thread>1</thread>
+  <message>Loaded 0 shorten urls!</message>
+</record>
+<record>
+  <date>2021-08-03T16:06:12.351342300Z</date>
+  <millis>1628006772351</millis>
+  <nanos>342300</nanos>
+  <sequence>1</sequence>
+  <logger>eu.org.xmon.emojishortenurl.App</logger>
+  <level>INFO</level>
+  <class>eu.org.xmon.emojishortenurl.App</class>
+  <method>startUp</method>
+  <thread>1</thread>
+  <message>Initialization config file..</message>
+</record>
+<record>
+  <date>2021-08-03T16:06:12.479267900Z</date>
+  <millis>1628006772479</millis>
+  <nanos>267900</nanos>
+  <sequence>2</sequence>
+  <logger>eu.org.xmon.emojishortenurl.App</logger>
+  <level>INFO</level>
+  <class>eu.org.xmon.emojishortenurl.App</class>
+  <method>startUp</method>
+  <thread>1</thread>
+  <message>Initialization ratelimiter..</message>
+</record>
+<record>
+  <date>2021-08-03T16:06:12.491261Z</date>
+  <millis>1628006772491</millis>
+  <nanos>261000</nanos>
+  <sequence>3</sequence>
+  <logger>eu.org.xmon.emojishortenurl.App</logger>
+  <level>INFO</level>
+  <class>eu.org.xmon.emojishortenurl.App</class>
+  <method>startUp</method>
+  <thread>1</thread>
+  <message>Running web server on http://localhost:8082</message>
+</record>
+<record>
+  <date>2021-08-03T16:06:12.511249200Z</date>
+  <millis>1628006772511</millis>
+  <nanos>249200</nanos>
+  <sequence>4</sequence>
+  <logger>eu.org.xmon.emojishortenurl.App</logger>
+  <level>INFO</level>
+  <class>eu.org.xmon.emojishortenurl.App</class>
+  <method>startUp</method>
+  <thread>1</thread>
+  <message>Initialization all routes..</message>
+</record>
+</log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2021-08-03T16:08:02.817371100Z</date>
+  <millis>1628006882817</millis>
+  <nanos>371100</nanos>
+  <sequence>0</sequence>
+  <logger>eu.org.xmon.emojishortenurl.App</logger>
+  <level>INFO</level>
+  <class>eu.org.xmon.emojishortenurl.manager.ShortManager</class>
+  <method>loadUsers</method>
+  <thread>1</thread>
+  <message>Loaded 0 shorten urls!</message>
+</record>
+<record>
+  <date>2021-08-03T16:08:02.844355900Z</date>
+  <millis>1628006882844</millis>
+  <nanos>355900</nanos>
+  <sequence>1</sequence>
+  <logger>eu.org.xmon.emojishortenurl.App</logger>
+  <level>INFO</level>
+  <class>eu.org.xmon.emojishortenurl.App</class>
+  <method>startUp</method>
+  <thread>1</thread>
+  <message>Initialization config file..</message>
+</record>
+<record>
+  <date>2021-08-03T16:08:02.961288300Z</date>
+  <millis>1628006882961</millis>
+  <nanos>288300</nanos>
+  <sequence>2</sequence>
+  <logger>eu.org.xmon.emojishortenurl.App</logger>
+  <level>INFO</level>
+  <class>eu.org.xmon.emojishortenurl.App</class>
+  <method>startUp</method>
+  <thread>1</thread>
+  <message>Initialization ratelimiter..</message>
+</record>
+<record>
+  <date>2021-08-03T16:08:02.972282400Z</date>
+  <millis>1628006882972</millis>
+  <nanos>282400</nanos>
+  <sequence>3</sequence>
+  <logger>eu.org.xmon.emojishortenurl.App</logger>
+  <level>INFO</level>
+  <class>eu.org.xmon.emojishortenurl.App</class>
+  <method>startUp</method>
+  <thread>1</thread>
+  <message>Running web server on http://localhost:8082</message>
+</record>
+<record>
+  <date>2021-08-03T16:08:02.988272700Z</date>
+  <millis>1628006882988</millis>
+  <nanos>272700</nanos>
+  <sequence>4</sequence>
+  <logger>eu.org.xmon.emojishortenurl.App</logger>
+  <level>INFO</level>
+  <class>eu.org.xmon.emojishortenurl.App</class>
+  <method>startUp</method>
+  <thread>1</thread>
+  <message>Initialization all routes..</message>
+</record>
+</log>

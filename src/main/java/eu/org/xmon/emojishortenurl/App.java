@@ -4,6 +4,9 @@ import ch.jalu.configme.SettingsManager;
 import ch.jalu.configme.SettingsManagerBuilder;
 import dev.walshy.sparkratelimiter.RateLimiter;
 import eu.org.xmon.emojishortenurl.config.ConfigHolder;
+import eu.org.xmon.emojishortenurl.manager.ShortManager;
+import eu.org.xmon.emojishortenurl.utils.LoggerUtils;
+import eu.org.xmon.emojishortenurl.utils.RoutesUtils;
 import spark.ModelAndView;
 import spark.template.velocity.VelocityTemplateEngine;
 
@@ -19,49 +22,47 @@ import java.util.logging.Logger;
 import static spark.Spark.*;
 
 public class App {
-    private static Logger logger = Logger.getLogger(App.class.getName());
+
     public void startUp(){
         //Setup logger
-        System.setProperty("java.util.logging.SimpleFormatter.format","[%1$tF %1$tT] [%4$-7s] %5$s %n");
-        logger.setLevel(Level.ALL);
-        try {
-            new File("logs").mkdir();
-            FileHandler fileHandler = new FileHandler("/logs/log-%u.log", 1000 * 1000 * 20, 100, true);
-            logger.addHandler(fileHandler);
-        } catch (SecurityException | IOException e1) {
-            e1.printStackTrace();
-            return;
-        }
+        final LoggerUtils loggerUtils = new LoggerUtils();
+        loggerUtils.start();
 
-        logger.info("Initialization config file..");
+        final ShortManager shortManager = new ShortManager();
+        shortManager.loadUsers();
+        Runtime.getRuntime().addShutdownHook(new Thread(() ->{
+            try {
+                shortManager.saveUrls();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }));
+
+        LoggerUtils.logger.info("Initialization config file..");
+        final File configFile = new File("config.yml");
+        if (!configFile.exists()){
+            try {
+                configFile.createNewFile();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
         final SettingsManager config = SettingsManagerBuilder
-                .withYamlFile(new File("config.yml"))
+                .withYamlFile(configFile)
                 .configurationData(ConfigHolder.class)
                 .useDefaultMigrationService()
                 .create();
 
-        logger.info("Initialization ratelimiter..");
+        LoggerUtils.logger.info("Initialization ratelimiter..");
         final RateLimiter rateLimiter = new RateLimiter(config.getProperty(ConfigHolder.SETTINGS_MAX$REQUESTS), config.getProperty(ConfigHolder.SETTINGS_RATELIMITS$RESET), TimeUnit.MINUTES);
 
-        logger.info("Running web server on http://localhost:" + config.getProperty(ConfigHolder.SETTINGS_PORT));
+        LoggerUtils.logger.info("Running web server on http://localhost:" + config.getProperty(ConfigHolder.SETTINGS_PORT));
         port(config.getProperty(ConfigHolder.SETTINGS_PORT));
-        notFound((request, response) -> {
-            final Map<String, Object> model = new HashMap<>();
-            model.put("titleprefix", config.getProperty(ConfigHolder.SETTINGS_TITLE$PREFIX));
-            model.put("url", config.getProperty(ConfigHolder.SETTINGS_URL));
-            return new VelocityTemplateEngine().render(
-                    new ModelAndView(model, "private/404-error.ftl")
-            );
-        });
 
-        internalServerError((request, response) -> {
-            final Map<String, Object> model = new HashMap<>();
-            model.put("titleprefix", config.getProperty(ConfigHolder.SETTINGS_TITLE$PREFIX));
-            model.put("url", config.getProperty(ConfigHolder.SETTINGS_URL));
-            return new VelocityTemplateEngine().render(
-                    new ModelAndView(model, "private/404-error.ftl")
-            );
-        });
+        LoggerUtils.logger.info("Initialization all routes..");
+        notFound((request, response) -> RoutesUtils.error404(config));
+
+        internalServerError((request, response) -> RoutesUtils.error404(config));
 
         staticFiles.location("/public");
 
@@ -69,9 +70,10 @@ public class App {
 
         rateLimiter.map("/api/v1/*");
 
-        get("/", (request, response) -> {
-            final Map<String, Object> model = new HashMap<>();
-            return null;
-        });
+        post("/api/v1/short", (request, response) -> RoutesUtils.POST$SHORTURL(request, response, config));
+
+        get("/", (request, response) -> RoutesUtils.index(request, response, config));
+
+        get("/:id", (request, response) ->  RoutesUtils.GET$SHORTURL(request, response, config));
     }
 }
